@@ -29,19 +29,21 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radio_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_date"
+            />
+        <RadioButton
+            android:id="@+id/radio_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/radio_time"
+            />
     </RadioGroup>
-    <RadioButton
-        android:id="@+id/radio_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/radio_date"
-        />
-    <RadioButton
-        android:id="@+id/radio_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/radio_time"
-        />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

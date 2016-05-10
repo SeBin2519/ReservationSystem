@@ -1,5 +1,7 @@
 package kr.hs.emirim.sebin2519.reservationsystem;
 
+import android.graphics.Color;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,5 +58,39 @@ public class MainActivity extends AppCompatActivity {
                 timePick.setVisibility(View.VISIBLE); //보이게
             }
         });
+
+        //크로노미터 변경(타이머 설정) -> 버튼이 이벤트 소스(butStart)
+        butStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chrono.setBase(SystemClock.elapsedRealtime()); //기본적인 설정 (어떤 시간을 설정할 것인지)
+                chrono.start();//크로노미터 시작
+                chrono.setTextColor(Color.RED);//컬러 색상 변경
+            }
+        });
+
+        //크로노미터 변경(타이머 설정)
+        butDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                chrono.stop();//크로노미터 시작
+                chrono.setTextColor(Color.BLUE);//컬러 색상 변경
+
+                //중지 후 TextView에 에약 설정한 날짜와 시간이 표시
+                Calendar cal=Calendar.getInstance(); //추상클래스
+                cal.setTimeInMillis(calView.getDate());
+                int year=cal.get(Calendar.YEAR);
+                int month=cal.get(Calendar.MONTH)+1;
+                int date=cal.get(Calendar.DATE);
+                //int hour=timePick.getHour();
+                //int minute=timePick.getMinute();
+
+                //연결
+                String dateAndTime=year+"년 "+month+" 월"+date+" 일";//+hour+" 시"+minute+" 분";
+                textResult.setText(dateAndTime);
+
+            }
+        });
+
     }
 }
