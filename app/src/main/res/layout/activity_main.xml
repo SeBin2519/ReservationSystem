@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="kr.hs.emirim.sebin2519.reservationsystem.MainActivity">
+    tools:context="kr.hs.emirim.sebin2519.reservationsystem.MainActivity"
+    android:orientation="vertical">
 
     <Chronometer
         android:id="@+id/chrono"
