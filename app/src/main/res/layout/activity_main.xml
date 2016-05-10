@@ -72,7 +72,8 @@
         <Button
             android:id="@+id/but_done"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="예약 완료" />
         <TextView
             android:id="@+id/text_result"
             android:layout_width="match_parent"
